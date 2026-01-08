@@ -8,12 +8,14 @@ import HomePage from './pages/Home.jsx';
 import Footer from './components/Footer.jsx';
 import OrderPizza from './pages/Orderpizza.jsx';
 import PizzaCard from './components/PizzaCard.jsx';
+import BuildPizza from './pages/Buildpizza.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     {/* <App /> */}
     {/* <HomePage/> */}
-    <OrderPizza  />
+    {/* <OrderPizza  /> */}
     {/* <PizzaCard/> */}
+    <BuildPizza/>
   </StrictMode>,
 )
