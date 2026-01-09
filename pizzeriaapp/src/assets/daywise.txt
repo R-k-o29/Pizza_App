@@ -35,6 +35,12 @@ Timelines for Project Simulation.
 			v)  Delete an item from the shopping cart.
 			vi) Fetch all items from the shopping cart.
 
+			{itemType,pizzaId,ingredientId,name,image,price,quantity,totalPrice}
+
+			- basic cart Card dummy data
+			- orderPizza add to cart integration
+			- cart ui page
+
 	Day 3 & 4 : Create react app , screens and implement all functionalities. 
 
 	Day 5(first half) : debugging and Testing.

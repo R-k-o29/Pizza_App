@@ -6,6 +6,7 @@ import Footer from './components/Footer.jsx';
 import OrderPizza from './pages/Orderpizza.jsx';
 import PizzaCard from './components/PizzaCard.jsx';
 import BuildPizza from './pages/Buildpizza.jsx';
+import CartCard from './components/CartCard.jsx';
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path='/home' element={<HomePage/>} />
         <Route path='/pizza' element={<OrderPizza/>}/>
         <Route path='/build-pizza' element={<BuildPizza/>}/>
+        <Route path='/cart' element={<CartCard/>}/>
       </Routes>
     </BrowserRouter>
   )

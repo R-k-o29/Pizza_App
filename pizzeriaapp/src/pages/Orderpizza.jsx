@@ -4,8 +4,7 @@ import PizzaCard from "../components/PizzaCard";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 export default function OrderPizza() {
-  const [pizzaData, setPizzaData] = useState([]);
-  //pizzaData = []
+  const [pizzaData, setPizzaData] = useState([]); 
 
   let getAllPizza = () => {
     axios
@@ -39,6 +38,7 @@ export default function OrderPizza() {
               pizzatoppings={item.topping}
               pizzaimageurl={item.image}
               pizzatype={item.type}
+              pizzaid={item._id}
             />
           </div>
         );

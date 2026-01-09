@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from '../assets/pizzeria_logo.png';
 
 export default function Header(){
     return(
@@ -9,7 +10,7 @@ export default function Header(){
             </div>
             <div className="d-flex col-10">
                 <div className="d-flex col-4 justify-content-between">
-                    <img src="pizzeriaapp/src/assets/pizzeria_logo.png" alt="logo" />
+                    <img src={logo} alt="logo" style={{"width":"40px","height":"40px"}} />
                     <Link to='/pizza' className="nav-link fs-5">Order Pizza</Link>
                     <Link to='/build-pizza' className="nav-link fs-5">Build Ur Pizza</Link>
                 </div>

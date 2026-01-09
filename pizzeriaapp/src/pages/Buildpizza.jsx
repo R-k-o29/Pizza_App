@@ -5,8 +5,7 @@ import Footer from "../components/Footer";
 export default function BuildPizza() {
   const [ingredientData, SetIngredientData] = useState([]);
 
-  const[totalCost,setTotalCost]=useState(0);
-
+  const [totalCost, setTotalCost] = useState(0);
 
   let getAllIngredients = () => {
     axios
@@ -24,14 +23,13 @@ export default function BuildPizza() {
     getAllIngredients();
   }, []);
 
-  let calculateTotalCost = (price,checked) => {
-    if(checked){
-        setTotalCost(totalCost+price);
-    }else{
-        setTotalCost(totalCost-price);
+  let calculateTotalCost = (price, checked) => {
+    if (checked) {
+      setTotalCost(totalCost + price);
+    } else {
+      setTotalCost(totalCost - price);
     }
-  }
-
+  };
 
   return (
     <>
@@ -58,19 +56,30 @@ export default function BuildPizza() {
                       {item.tname} &nbsp; ₹{item.price}
                     </td>
                     <td className="text-warning">
-                      <input 
-                      type="checkbox" 
-                      name="Add" 
-                      onChange={(e)=>calculateTotalCost(item.price,e.target.checked)}
-                      />&nbsp;Add
+                      <input
+                        type="checkbox"
+                        name="Add"
+                        onChange={(e) =>
+                          calculateTotalCost(item.price, e.target.checked)
+                        }
+                      />
+                      &nbsp;Add
                     </td>
                   </tr>
                 </tbody>
               </>
             );
           })}
-          <td className="fw-bold">Total cost: {totalCost} </td>
-          <td><button className="btn btn-dark text-white mt-2">Build Ur Pizza</button></td>
+          <tfoot>
+            <tr>
+              <td className="fw-bold">Total cost: ₹{totalCost} </td>
+              <td>
+                <button className="btn btn-dark text-white mt-2">
+                  Build Ur Pizza
+                </button>
+              </td>
+            </tr>
+          </tfoot>
         </table>
       </div>
       <Footer />
