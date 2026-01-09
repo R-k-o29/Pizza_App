@@ -8,6 +8,7 @@ import PizzaCard from './components/PizzaCard.jsx';
 import BuildPizza from './pages/Buildpizza.jsx';
 import CartCard from './components/CartCard.jsx';
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import Cart from './pages/Cart.jsx';
 
 function App() {
 
@@ -18,7 +19,8 @@ function App() {
         <Route path='/home' element={<HomePage/>} />
         <Route path='/pizza' element={<OrderPizza/>}/>
         <Route path='/build-pizza' element={<BuildPizza/>}/>
-        <Route path='/cart' element={<CartCard/>}/>
+        <Route path='/cart-card' element={<CartCard/>}/>
+        <Route path='/cart' element={<Cart/>}/>
       </Routes>
     </BrowserRouter>
   )

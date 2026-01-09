@@ -1,7 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import logo from '../assets/pizzeria_logo.png';
 
 export default function Header(){
+    const navigator = useNavigate();
+    let goToCart =()=>{
+        navigator("/cart");
+    }
+
     return(
         <>
         <nav className="navbar bg-black text-white p-3">
@@ -15,7 +20,7 @@ export default function Header(){
                     <Link to='/build-pizza' className="nav-link fs-5">Build Ur Pizza</Link>
                 </div>
                 <div className="d-flex col-8 justify-content-end">
-                    <button className="btn btn-warning text-white">Shopping Cart</button>
+                    <button className="btn btn-warning text-white" onClick={goToCart}>Shopping Cart</button>
                 </div>
             </div>
         </nav>

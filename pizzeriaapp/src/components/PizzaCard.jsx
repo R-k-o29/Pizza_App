@@ -1,11 +1,10 @@
 import axios from 'axios';
 export default function PizzaCard({pizzaname,pizzaprice,pizzadescription,pizzaingredients,pizzatoppings,pizzaimageurl,pizzatype,pizzaid}){
     const isVeg = pizzatype==='veg';
-    const type="pizza"
 
       let addToCart = async()=>{
         const item={
-        itemType: type,
+        itemType: pizzatype,
         pizzaId:pizzaid,
         name:pizzaname,
         image:pizzaimageurl,
