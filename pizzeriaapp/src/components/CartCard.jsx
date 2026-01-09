@@ -1,8 +1,8 @@
-export default function CartCard({itemimage,itemname,itemprice,itemtype}){
+export default function CartCard({itemimage,itemname,itemprice,itemtype,itemquantity,itemdecrease,itemincrease}){
     let isVeg = itemtype==="veg";
     return(
         <>
-            <div className="container bg-light shadow rounded p-2 m-2 w-25 text-center">
+            <div className="container bg-light shadow rounded p-2 m-2 text-center">
                 <div>
                     <img 
                     src={itemimage}
@@ -16,7 +16,9 @@ export default function CartCard({itemimage,itemname,itemprice,itemtype}){
                 </div>
                 <div className="d-flex justify-content-center p-2">
                     <div className="m-2" >₹ {itemprice}</div>
-                    <button className="btn btn-warning text-white">Add +</button>
+                    <button className="btn btn-danger border" onClick={itemdecrease}>-</button>
+                    <span className="m-2">{itemquantity}</span>
+                    <button className="btn btn-success border" onClick={itemincrease}>+</button>
                 </div>
             </div>
         </>
