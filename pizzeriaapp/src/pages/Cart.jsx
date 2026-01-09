@@ -40,33 +40,43 @@ export default function Cart(){
         setItemData(updated);
     }
 
+    let removeItem = (id)=>{
+        axios.delete(`http://localhost:3004/api/cart/delete/${id}`).then(()=>{
+            alert("Item removed successfully");
+            getCartData();
+        })
+    }
+
     return(
         <>
         <Header/>
         <div className="d-flex">
-            <div className="col-md-4">
+            <div className="row">
                 {
                 itemData.map((item,index)=>{
                     return(
-                        <CartCard
-                        itemimage={item.image}
-                        itemname={item.name}
-                        itemprice={item.price}
-                        itemtype={item.itemType}
-                        itemquantity={item.quantity}
-                        itemdecrease={()=>decreaseQty(index)}
-                        itemincrease={()=>increaseQty(index)}
-                        />
+                        <div className="col-md-6">
+                            <CartCard
+                                itemimage={item.image}
+                                itemname={item.name}
+                                itemprice={item.price}
+                                itemtype={item.itemType}
+                                itemquantity={item.quantity}
+                                itemdecrease={()=>decreaseQty(index)}
+                                itemincrease={()=>increaseQty(index)}
+                                deleteItem={()=>removeItem(item._id)}
+                            />
+                        </div>
                     )
                 })
                 }
             </div>
-            <div className="col-md-8">
-                <div className="container border w-75 mt-2 shadow rounded">
+            <div className="col-md-6">
+                <div className="container border w-75 mt-2 shadow rounded bg-dark text-white p-4">
                     <h2 className="text-center">Order Summary</h2>
                     <div className="bg-light">
-                        <table className="table table-bordered">
-                            <thead className="table-light">
+                        <table className="table table-striped table-bordered">
+                            <thead>
                                 <tr>
                                     <th>SR.NO</th>
                                     <th>Product</th>
