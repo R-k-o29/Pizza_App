@@ -24,7 +24,7 @@ export default function OrderPizza() {
   },[])
 
   return (
-    <>
+    <div className="col-md-10 align-self-center mx-auto">
       <Header />
       <div className="row">
         {pizzaData.map((item, index) => {
@@ -45,6 +45,6 @@ export default function OrderPizza() {
       })}
       </div>
       <Footer/>
-    </>
+    </div>
   );
 }

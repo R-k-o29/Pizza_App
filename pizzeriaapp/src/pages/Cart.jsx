@@ -51,7 +51,7 @@ export default function Cart(){
         <>
         <Header/>
         <div className="d-flex">
-            <div className="row">
+            <div className="col-md-6 row">
                 {
                 itemData.map((item,index)=>{
                     return(
@@ -65,6 +65,7 @@ export default function Cart(){
                                 itemdecrease={()=>decreaseQty(index)}
                                 itemincrease={()=>increaseQty(index)}
                                 deleteItem={()=>removeItem(item._id)}
+                                customIngredients={item.customIngredients}
                             />
                         </div>
                     )

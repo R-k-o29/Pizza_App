@@ -1,5 +1,5 @@
 import axios from "axios";
-export default function CartCard({itemimage,itemname,itemprice,itemtype,itemquantity,itemdecrease,itemincrease,deleteItem}){
+export default function CartCard({itemimage,itemname,itemprice,itemtype,itemquantity,itemdecrease,itemincrease,deleteItem,customIngredients}){
     let isVeg = itemtype==="veg";
 
     return(
@@ -16,6 +16,21 @@ export default function CartCard({itemimage,itemname,itemprice,itemtype,itemquan
                     <div className="m-2" style={{"width":"20px","height":"20px","background":isVeg?"green":"red"}}></div>
                     <span className="mt-1">{itemname}</span>
                 </div>
+                <h4>Add Ons:</h4>
+                {
+                    customIngredients.length!== 0 
+                    ?
+                    customIngredients.map((item,index)=>{
+                        return(
+                            <>
+                            <div>
+                                {item+", "}
+                            </div>
+                            </>
+                        )
+                    }):"None"
+                    
+                }
                 <div className="d-flex justify-content-center p-2">
                     <div className="m-2" >₹ {itemprice}</div>
                     <button className="btn btn-light border" onClick={itemdecrease}>-</button>

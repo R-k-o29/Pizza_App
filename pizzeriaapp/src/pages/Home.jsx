@@ -3,7 +3,7 @@ import Header from "../components/Header";
 
 export default function HomePage() {
   return (
-    <>
+    <div className="col-md-10 align-self-center mx-auto">
       <Header />
       <div className="p-2">
         <h2 className="text-center">Our story</h2>
@@ -73,6 +73,6 @@ export default function HomePage() {
         </div>
       </div>
       <Footer/>
-    </>
+    </div>
   );
 }

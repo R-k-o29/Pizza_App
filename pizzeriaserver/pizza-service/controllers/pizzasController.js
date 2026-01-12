@@ -27,4 +27,14 @@ let getPizzas = async(req,res)=>{
     })
 }
 
-module.exports={insertPizza, getPizzas};
+let getSinglePizza = async(req,res)=>{
+    let pizzaId = req.params.id;
+    let getRes = await pizzaModel.findOne({_id:pizzaId});
+    res.send({
+        status:1,
+        msg:"Pizza Details:",
+        getRes
+    })
+}
+
+module.exports={insertPizza, getPizzas, getSinglePizza};

@@ -33,6 +33,10 @@ let cartSchema = new Schema({
     },
     totalPrice:{
         type:Number
+    },
+    customIngredients:{
+        type:[String],
+        default:[],
     }
 });
 

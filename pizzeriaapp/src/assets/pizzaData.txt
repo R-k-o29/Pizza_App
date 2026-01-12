@@ -43,7 +43,7 @@
     "type": "nonveg",
     "price": "625",
     "name": "Ultimate Chicken",
-    "image": "https://thumb7.shutterstock.com/display_pic_with_logo/2793292/246331354/stock-photo-pizza-margherita-italian-246331354.jpg%22,
+    "image": "https://thumb7.shutterstock.com/display_pic_with_logo/2793292/246331354/stock-photo-pizza-margherita-italian-246331354.jpg",
     "description": "This is popular italian pizza flavoured with BBA sauce, flavored butter. it has spongy base which gives unique taste with multiple toppings",
     "ingredients": ["deep dish pizza mix", "pizza saucce", "pizza sauce seasoning", "cheese", "BBQ sauce", "cajun", "flavored butter"],
     "topping": ["Pepperoni", "Fried Onion", "Chicken Meat ball", "Chicken Sausage", "Chicken keema"]

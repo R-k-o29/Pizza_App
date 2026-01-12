@@ -1,8 +1,8 @@
 let {cartModel} = require('../models/cartModel.model');
 
 let insertItem = (req,res)=>{
-    let {itemType,pizzaId,ingredientId,name,image,price,quantity,totalPrice}=req.body;
-    let insertObj = new cartModel({itemType,pizzaId,ingredientId,name,image,price,quantity,totalPrice});
+    let {itemType,pizzaId,ingredientId,name,image,price,quantity,totalPrice,customIngredients}=req.body;
+    let insertObj = new cartModel({itemType,pizzaId,ingredientId,name,image,price,quantity,totalPrice,customIngredients});
 
     insertObj.save().then(()=>{
         res.send({
@@ -39,8 +39,8 @@ let deleteItem = async(req,res)=>{
 
 let updateItem = async(req,res)=>{
     let updateId= req.params.id;
-    let {itemType,pizzaId,ingredientId,name,image,price,quantity,totalPrice} = req.body;
-    let updateObj = {itemType,pizzaId,ingredientId,name,image,price,quantity,totalPrice};
+    let {itemType,pizzaId,ingredientId,name,image,price,quantity,totalPrice,customIngredients} = req.body;
+    let updateObj = {itemType,pizzaId,ingredientId,name,image,price,quantity,totalPrice,customIngredients};
 
     let updateRes = await cartModel.updateOne({_id:updateId},updateObj);
     res.send({

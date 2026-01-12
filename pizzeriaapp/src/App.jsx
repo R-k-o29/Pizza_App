@@ -12,7 +12,7 @@ function App() {
         <Route path='/' element={<HomePage/>} />
         <Route path='/home' element={<HomePage/>} />
         <Route path='/pizza' element={<OrderPizza/>}/>
-        <Route path='/build-pizza' element={<BuildPizza/>}/>
+        <Route path='/build-pizza/:pizzaId' element={<BuildPizza/>}/>
         <Route path='/cart' element={<Cart/>}/>
       </Routes>
     </BrowserRouter>
