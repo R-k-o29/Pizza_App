@@ -2,8 +2,11 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import { toast,ToastContainer } from "react-toastify";
 export default function BuildPizza() {
+  let navigateTo = useNavigate();
+
   const [ingredientData, SetIngredientData] = useState([]);
 
   const[singlePizzaData,setsinglePizzaData] = useState({
@@ -79,8 +82,10 @@ export default function BuildPizza() {
         customIngredients: singlePizzaData.customIngredients
       };
       await axios.post(`http://localhost:3004/api/cart/insert`,item).then(()=>{
-        alert("Your pizza is added to cart");
+        toast.success("Your pizza is added to cart");
       })
+      navigateTo('/cart');
+
     }
 
   return (
@@ -136,6 +141,7 @@ export default function BuildPizza() {
         </table>
       </div>
       </div>
+      <ToastContainer/>
       <Footer />
     </>
   );

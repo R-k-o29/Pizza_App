@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { use } from 'react';
+import { ToastContainer,toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 export default function PizzaCard({pizzaname,pizzaprice,pizzadescription,pizzaingredients,pizzatoppings,pizzaimageurl,pizzatype,pizzaid}){
     const isVeg = pizzatype==='veg';
@@ -33,6 +34,7 @@ export default function PizzaCard({pizzaname,pizzaprice,pizzadescription,pizzain
                     />
                     <br />
                     <button className="btn btn-warning text-white mt-2" onClick={goToBuild}>Add to cart</button>
+                    <ToastContainer/>
                 </div>
             </div>
         </>

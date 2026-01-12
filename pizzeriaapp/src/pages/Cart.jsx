@@ -3,6 +3,7 @@ import { useEffect,useState } from "react";
 import CartCard from "../components/CartCard";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { toast, ToastContainer } from "react-toastify";
 export default function Cart(){
     const[itemData,setItemData]=useState([]);
 
@@ -42,13 +43,15 @@ export default function Cart(){
 
     let removeItem = (id)=>{
         axios.delete(`http://localhost:3004/api/cart/delete/${id}`).then(()=>{
-            alert("Item removed successfully");
+            toast.warn("Item removed successfully",{
+                position:"top-right"
+            });
             getCartData();
         })
     }
 
     return(
-        <>
+        <div className="col-10 align-self-center mx-auto">
         <Header/>
         <div className="d-flex">
             <div className="col-md-6 row">
@@ -110,7 +113,8 @@ export default function Cart(){
                 </div>
             </div>
         </div>    
+        <ToastContainer/>
         <Footer/>
-        </>
+        </div>
     )
 }

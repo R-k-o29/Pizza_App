@@ -3,6 +3,7 @@ import { useState,useEffect } from "react";
 import PizzaCard from "../components/PizzaCard";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import {toast,ToastContainer} from 'react-toastify';
 export default function OrderPizza() {
   const [pizzaData, setPizzaData] = useState([]); 
 
