@@ -7,12 +7,16 @@ export default function PizzaCard({pizzaname,pizzaprice,pizzadescription,pizzain
     let navigateTo=useNavigate();
 
     let goToBuild=()=>{
+        toast.info("Customize your pizza now!",{
+            position:"top-right"
+        });
         navigateTo(`/build-pizza/${pizzaid}`);
+
     }
 
     return(
-        <>
-            <div className="container d-flex border justify-content-between shadow m-2 rounded" style={{"maxWidth": "580px"}}>
+        <div className="m-2 col-md-11 mx-auto">
+            <div className="container d-flex border justify-content-between shadow m-2 rounded">
                 <div className="text-center">
                     <h5 className="mt-3">{pizzaname}</h5>
                     <div className="m-5" style={{"width":"20px","height":"20px",
@@ -34,9 +38,8 @@ export default function PizzaCard({pizzaname,pizzaprice,pizzadescription,pizzain
                     />
                     <br />
                     <button className="btn btn-warning text-white mt-2" onClick={goToBuild}>Add to cart</button>
-                    <ToastContainer/>
                 </div>
             </div>
-        </>
+        </div>
     )
 }

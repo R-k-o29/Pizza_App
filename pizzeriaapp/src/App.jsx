@@ -4,6 +4,7 @@ import OrderPizza from './pages/Orderpizza.jsx';
 import BuildPizza from './pages/Buildpizza.jsx';
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import Cart from './pages/Cart.jsx';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='/build-pizza/:pizzaId' element={<BuildPizza/>}/>
         <Route path='/cart' element={<Cart/>}/>
       </Routes>
+      <ToastContainer/>
     </BrowserRouter>
   )
 }

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { useParams, useNavigate } from "react-router-dom";
-import { toast,ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 export default function BuildPizza() {
   let navigateTo = useNavigate();
 
@@ -82,10 +82,11 @@ export default function BuildPizza() {
         customIngredients: singlePizzaData.customIngredients
       };
       await axios.post(`http://localhost:3004/api/cart/insert`,item).then(()=>{
-        toast.success("Your pizza is added to cart");
+        toast.success("Pizza is added to cart",{
+            position:"top-right"
+        });
       })
       navigateTo('/cart');
-
     }
 
   return (
@@ -141,7 +142,6 @@ export default function BuildPizza() {
         </table>
       </div>
       </div>
-      <ToastContainer/>
       <Footer />
     </>
   );

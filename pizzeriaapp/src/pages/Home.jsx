@@ -5,7 +5,7 @@ export default function HomePage() {
   return (
     <div className="col-md-10 align-self-center mx-auto">
       <Header />
-      <div className="p-2">
+      <div className="p-4 bg-light shadow">
         <h2 className="text-center">Our story</h2>
         <p>
           We believe in good. We launched Fresh Pan Pizza Best Excuse Awards on
