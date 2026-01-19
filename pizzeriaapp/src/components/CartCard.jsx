@@ -4,7 +4,7 @@ export default function CartCard({itemimage,itemname,itemprice,itemtype,itemquan
 
     return(
         <>
-            <div className="container bg-dark text-white shadow rounded p-2 m-2 text-center" style={{"width":"250px"}}>
+            <div className="container bg-dark text-white shadow rounded p-2 m-2 text-center" style={{"width":"300px"}}>
                 <div>
                     <img 
                     src={itemimage}
@@ -24,7 +24,7 @@ export default function CartCard({itemimage,itemname,itemprice,itemtype,itemquan
                         return(
                             <>
                             <div>
-                                {item+", "}
+                                {item}
                             </div>
                             </>
                         )

@@ -4,6 +4,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { useParams, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { isLoggedIn } from "../utils/auth";
+
 export default function BuildPizza() {
   let navigateTo = useNavigate();
 
@@ -73,6 +75,11 @@ export default function BuildPizza() {
   
 
   let addToCart = async()=>{
+
+    if (!isLoggedIn()) {
+    navigateTo("/login");
+    return;
+    }
         const item={
         pizzaId: pizzaId,
         itemType:singlePizzaData.type,
@@ -92,7 +99,7 @@ export default function BuildPizza() {
   return (
     <>
       <Header />
-      <div className="col-md-8 align-self-center mx-auto">
+      <div className="col-md-6 align-self-center mx-auto">
         <p className="text-center p-2">
         Pizzeria now gives you the option to build your own pizza. Customize
         your pizza by choosing the list of ingredients below.
@@ -107,7 +114,7 @@ export default function BuildPizza() {
                     <td>
                       <img
                         src={item.image}
-                        style={{ width: "100px", height: "100px" }}
+                        style={{ width: "60px", height: "60px" }}
                         alt=""
                       />
                     </td>
