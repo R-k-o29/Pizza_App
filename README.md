@@ -32,7 +32,7 @@ Guest users can browse pizzas
 Add to Cart → Login required
 Cart & checkout protected
 
-'
+***
 <Pizzeria>/
 │
 ├── pizzeriaapp/              # React Frontend
@@ -51,7 +51,7 @@ Cart & checkout protected
 │   └── user-service/
 │
 └── README.md
-'
+***
 
 
 🗄️ Database Structure
