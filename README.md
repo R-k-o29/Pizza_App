@@ -32,28 +32,6 @@ Guest users can browse pizzas
 Add to Cart → Login required
 Cart & checkout protected
 
-***
-<Pizzeria>/
-│
-├── pizzeriaapp/              # React Frontend
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── utils/
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   └── package.json
-│
-├── pizzariaserver/           # Backend (Microservices)
-│   ├── pizza-service/
-│   ├── ingredient-service/
-│   ├── cart-service/
-│   └── user-service/
-│
-└── README.md
-***
-
-
 🗄️ Database Structure
 Database Name: PIZZARIADB
 
